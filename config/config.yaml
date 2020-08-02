@@ -1,0 +1,12 @@
+cat_features: ['sex', 'smoker', 'region']
+num_features: ['age', 'bmi', 'children']
+data: data/data.csv
+enc_path: models/enc.joblib
+model_path: models/model.joblib
+random_state: 42
+test_size: 0.2
+modeling:
+  model_path: models/model.joblib
+  random_state: 42
+  n_estimators: 200
+  max_depth: 7

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {background-color: lightblue;}
+</style>
+    <meta charset="UTF-8">
+    <link href="basic.css" rel="stylesheet">
+</head>
+
+<body>
+    <h3>
+         <a href = "{{ url_for('index') }}">Insurance Calculator</a>
+    </h3>
+    <h4>
+         <a> examples:</a>
+    </h4>
+
+    <hr/>
+    <table>
+         <thead>
+            <tr>
+               <th>age</th>
+               <th>sex</th>
+               <th>bmi</th>
+               <th>children</th>
+               <th>smoker</th>
+               <th>region</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for insurance in insurances %}
+               <tr>
+                   <td>{{ insurance.age }}</td>
+                   <td>{{ insurance.sex }}</td>
+                   <td>{{ insurance.bmi }}</td>
+                   <td>{{ insurance.children }}</td>
+                   <td>{{ insurance.smoker }}</td>
+                   <td>{{ insurance.region }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <input type=text size=15 name=age placeholder="age">
+        <select id="sex" name="sex">
+            <option value="" disabled selected>sex</option>
+            <option value="female">female</option>
+            <option value="male">male</option>
+        </select>
+
+        <input type=text size=15 name=bmi placeholder="bmi">
+
+        <select id="children" name="children">
+            <option value="" disabled selected>children</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <select id="smoker" name="smoker">
+            <option value="" disabled selected>Smoker</option>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+        <select id="region" name="region">
+            <option value="" disabled selected>Region</option>
+            <option value="southwest">southwest</option>
+            <option value="southeast">southeast</option>
+            <option value="northwest">northwest</option>
+            <option value="northeast">northeast</option>
+        </select>
+
+        <input type=submit value=PREDICT>
+        <label for="fname">Result:</label>
+        <output name="result">{{ result }}</output>
+      </dl>
+    </form>
+
+</body>
+</html>
