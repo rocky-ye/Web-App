@@ -49,17 +49,7 @@ The success criteria for this project will be an R2 metric greater than 80% test
 │
 ├── deliverables/                     <- Any white papers, presentations, final work products that are presented or delivered to a stakeholder 
 │
-├── docs/                             <- Sphinx documentation based on Python docstrings. Optional for this project. 
-│
-├── figures/                          <- Generated graphics and figures to be used in reporting, documentation, etc
-│
 ├── models/                           <- Trained model objects (TMOs), model predictions, and/or model summaries
-│
-├── notebooks/
-│   ├── archive/                      <- Develop notebooks no longer being used.
-│   ├── deliver/                      <- Notebooks shared with others / in final state
-│   ├── develop/                      <- Current notebooks being used in development.
-│   ├── template.ipynb                <- Template notebook for analysis with useful imports, helper functions, and SQLAlchemy setup. 
 │
 ├── reference/                        <- Any reference material relevant to the project
 │
